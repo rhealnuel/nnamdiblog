@@ -8,7 +8,7 @@ router.post('/create_post', async(req,res) => {
     const postData = req.body;
 
     try {
-        if(!postData.title === "" || !postData.content || !postData.category === "" || !postData.image === "" || !postData.author === ""){
+        if(postData.title === "" || postData.content === ""|| postData.category === "" || postData.image === "" || postData.author === ""){
             return res.status(403).json({message: " please fill the required fields"})
         }
 
